@@ -1,0 +1,41 @@
+{
+    "name": "SimpleDataProc Processor",
+    "container": "simpledataprocess",
+    "description": "Creates 3 output har files for desired regions",
+    "pre_processing_stage": "python3 create_processor_yml.py",
+    "execution_stage": "./main.sh",
+    "slurm_input_rules": {
+           "time": {
+                "max": 60,
+                "min": 10,
+                "default_value": 10,
+                "step": 10,
+                "unit": "Minutes"   
+            },
+            "cpu_per_task": {
+                "max": 128,
+                "min": 16,
+                "default_value": 16,
+                "step": 16
+            }
+    },
+    "param_rules": {
+        "input_dir":{
+            "type": "string_input",
+            "require": true,
+            "default_value": "1234"
+        },
+        "start_year": {
+            "type": "string_input",
+            "require": true,
+            "default_value": "2015"
+        },
+        "end_year": {
+            "type": "string_input",
+            "require": true,
+            "default_value": "2020"
+        }
+    },
+    "supported_hpc": ["anvil_community"],
+    "default_hpc": "anvil_community"
+}
