@@ -11,3 +11,7 @@ mv $year outputs/
 done
 
 zip -r outputs.zip outputs/
+
+rm -rf outputs/
+
+rm -rf temp/
