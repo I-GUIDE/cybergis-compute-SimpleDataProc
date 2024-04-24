@@ -4,6 +4,7 @@
     "description": "Creates 3 output har files for desired regions",
     "pre_processing_stage": "python3 create_processor_yml.py",
     "execution_stage": "./main.sh",
+    "post_processing_stage": "./transfer_shared_outputs.sh",
     "slurm_input_rules": {
            "time": {
                 "max": 60,
