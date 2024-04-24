@@ -1,15 +1,13 @@
 #!/bin/bash
   
-mkdir /compute_shared/${job_id}
-
 cd ${result_folder}
+
+mkdir outputs
 
 for year in $(seq $param_start_year $param_end_year); do
 
-mv $year /compute_shared/${job_id}/
+mv $year outputs/
 
 done
 
-cd /compute_shared/${job_id}/
-
-zip -r output.zip *
+zip -r outputs.zip outputs/
