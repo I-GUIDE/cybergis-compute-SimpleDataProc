@@ -1,16 +1,17 @@
 #!/bin/bash
+
+#zip up outputs
   
 cd ${result_folder}
 
-mkdir outputs
+zip -r outputs.zip outputs/
 
+#clean up other files
 for year in $(seq $param_start_year $param_end_year); do
 
-mv $year outputs/
+rm -rf $year
 
 done
-
-zip -r outputs.zip outputs/
 
 rm -rf outputs/
 
