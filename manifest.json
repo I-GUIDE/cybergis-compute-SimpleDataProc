@@ -21,11 +21,6 @@
             }
     },
     "param_rules": {
-        "input_dir":{
-            "type": "string_input",
-            "require": true,
-            "default_value": "1234"
-        },
         "start_year": {
             "type": "string_input",
             "require": true,
@@ -37,6 +32,7 @@
             "default_value": "2020"
         }
     },
+    "require_upload_data": true,
     "supported_hpc": ["anvil_community"],
     "default_hpc": "anvil_community"
 }
